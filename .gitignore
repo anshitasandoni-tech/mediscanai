@@ -1,0 +1,23 @@
+# Secret Keys (CRITICAL - DO NOT REMOVE)
+.env
+backend/firebase-key.json
+
+# Dependencies (These are huge, don't upload them)
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Production Builds
+dist/
+build/
+.output/
+
+# System Files
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE Settings
+.vscode/
+.idea/
+.antigravity/
