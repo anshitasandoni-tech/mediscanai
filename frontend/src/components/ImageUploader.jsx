@@ -3,7 +3,7 @@ import { UploadCloud, FileText } from 'lucide-react';
 
 const API_URL = import.meta.env.VITE_API_URL || (window.location.hostname === 'localhost' 
   ? 'http://localhost:5000' 
-  : 'https://mediscan-ai-backend.onrender.com');
+  : 'https://medicinai.onrender.com');
 
 export default function ImageUploader({ onResult }) {
     const [loading, setLoading] = useState(false);
