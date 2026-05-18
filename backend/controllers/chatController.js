@@ -15,8 +15,8 @@ exports.chat = async (req, res) => {
 
         if (process.env.GEMINI_API_KEY && process.env.GEMINI_API_KEY !== 'put_your_gemini_api_key_here') {
             const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-            console.log('Attempting Gemini connection with model: gemini-2.5-flash');
-            const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+            console.log('Attempting Gemini connection with model: gemini-2.5-flash-lite');
+            const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
             
             const contextualMessage = `You are MediScan AI. You must respond in ${language}. Your reply must be strictly between 4 to 5 lines long. Use simple, easy-to-understand terms.
 
