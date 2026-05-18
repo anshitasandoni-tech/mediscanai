@@ -30,11 +30,11 @@ export default function ImageUploader({ onResult }) {
                 body: formData,
             });
             const data = await res.json();
-            onResult(data, type);
-        } catch (error) {
-            console.log("Error in image upload:", error);
-            console.error(error);
-            alert("Error processing image");
+            if (!res.ok || data.error) {
+                alert(data.error || "Failed to process image");
+            } else {
+                onResult(data, type);
+            }
         } finally {
             setLoading(false);
         }
