@@ -1,10 +1,15 @@
-const apiKey = process.env.GEMINI_API_KEY;
+import fetch from 'node-fetch';
+
+const apiKey = "[GCP_API_KEY]";
 const url = `https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`;
 
+console.log("Testing Gemini API connection...");
+console.log("API URL:", url);
+
 fetch(url)
-  .then(res => res.json())
-  .then(data => {
-     const textModels = data.models.filter(m => m.supportedGenerationMethods.includes("generateContent")).map(m => m.name);
-     console.log("Text models:", textModels);
+  .then(res => {
+    if (!res.ok) {
+      throw new Error(`API call failed: ${res.status} ${res.statusText}`);
+    }
+    return res.json();
   })
-  .catch(console.error);
